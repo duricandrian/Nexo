@@ -123,7 +123,7 @@ class CallService extends ChangeNotifier {
     if (!isGroup && peers.isEmpty && remoteId != null && outgoing) {
       await m.sendCallSignal(remoteId!, {'type': 'call-end', 'call': callId});
     }
-    if (isGroup && peers.isEmpty && outgoing && startedAt == null) {
+    if (isGroup && peers.isEmpty && groupKey != null && phase != CallPhase.incoming) {
       await m.sendGroupCallSignal(groupKey!, {'type': 'gcall-end', 'call': callId});
     }
     await _finish(status ?? (startedAt != null ? 'answered' : (outgoing ? 'cancelled' : 'missed')));
