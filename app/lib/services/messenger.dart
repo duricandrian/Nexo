@@ -286,14 +286,25 @@ class Messenger extends ChangeNotifier {
     await db.insert('chats', c.toRow(), conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
+  // A chat screen can be pushed again before the old one is disposed
+  // (e.g. from a notification), so track how many screens show each chat.
+  final Map<String, int> _openScreens = {};
+
   Future<void> openChat(String key) async {
+    _openScreens[key] = (_openScreens[key] ?? 0) + 1;
     activeChat = key;
     await markRead(key);
     Notifications.cancelChat(key);
   }
 
   void closeChat(String key) {
-    if (activeChat == key) activeChat = null;
+    final n = (_openScreens[key] ?? 1) - 1;
+    if (n > 0) {
+      _openScreens[key] = n;
+      return;
+    }
+    _openScreens.remove(key);
+    if (activeChat == key) activeChat = _openScreens.keys.isEmpty ? null : _openScreens.keys.last;
   }
 
   Future<void> setDraft(String key, String draft) async {
