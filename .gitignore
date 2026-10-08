@@ -4,3 +4,4 @@
 key.properties
 .env
 node_modules/
+app/android/build/
