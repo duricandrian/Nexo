@@ -64,6 +64,14 @@ class _ArcanaAppState extends State<ArcanaApp> with WidgetsBindingObserver {
       _messenger = m;
       _calls = calls;
     });
+    // The navigator keeps its initial route across the rebuild, so replace
+    // onboarding/splash explicitly once the providers are in place.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      navigatorKey.currentState?.pushAndRemoveUntil(
+        MaterialPageRoute(builder: (_) => const HomeScreen()),
+        (_) => false,
+      );
+    });
     BackgroundService.start().catchError((_) {});
     final payload = await Notifications.launchPayload();
     if (payload != null) _onNotificationTap(payload);
