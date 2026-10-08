@@ -8,7 +8,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 /// also contained in google-services.json); access is enforced by the
 /// security rules. Override at build time with --dart-define.
 class FirebaseConfig {
-  static const apiKey = String.fromEnvironment('FB_API_KEY', defaultValue: 'demo-key');
+  static const apiKey = String.fromEnvironment('FB_API_KEY', defaultValue: 'AIzaSyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
   static const appId = String.fromEnvironment('FB_APP_ID', defaultValue: '1:000000000000:android:0000000000000000000000');
   static const senderId = String.fromEnvironment('FB_SENDER_ID', defaultValue: '000000000000');
   static const projectId = String.fromEnvironment('FB_PROJECT_ID', defaultValue: 'demo-nexo');
@@ -18,7 +18,8 @@ class FirebaseConfig {
   /// Host of the local Firebase emulators (e.g. 10.0.2.2 from an Android emulator).
   static const emulatorHost = String.fromEnvironment('FB_EMULATOR_HOST');
 
-  static FirebaseFunctions get functions => FirebaseFunctions.instanceFor(region: region);
+  static FirebaseFunctions? _functions;
+  static FirebaseFunctions get functions => _functions ??= FirebaseFunctions.instanceFor(region: region);
 
   static Future<void> init() async {
     if (Firebase.apps.isNotEmpty) return;

@@ -69,6 +69,7 @@ class Connection {
       await auth.currentUser!.getIdToken(true);
       return (r.data as Map)['id'] as String;
     } on FirebaseException catch (e) {
+      debugPrint('register: ${e.code} ${e.message}');
       throw ConnectionException(e.code);
     }
   }

@@ -50,6 +50,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       await p.setString('nickname', _nick.text.trim());
       await widget.onDone(identity);
     } catch (e) {
+      debugPrint('register failed: $e');
       setState(() => _error = context.l.serverUnreachable);
     } finally {
       if (mounted) setState(() => _busy = false);
