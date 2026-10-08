@@ -94,6 +94,7 @@ class PushService {
     if (FirebaseConfig.emulatorHost.isNotEmpty) return;
     try {
       final fm = FirebaseMessaging.instance;
+      await fm.setAutoInitEnabled(true);
       await fm.requestPermission();
       Future<void> save(String? token) async {
         if (token == null) return;
