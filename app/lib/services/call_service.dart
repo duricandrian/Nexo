@@ -123,6 +123,9 @@ class CallService extends ChangeNotifier {
     if (!isGroup && peers.isEmpty && remoteId != null && outgoing) {
       await m.sendCallSignal(remoteId!, {'type': 'call-end', 'call': callId});
     }
+    if (isGroup && peers.isEmpty && outgoing && startedAt == null) {
+      await m.sendGroupCallSignal(groupKey!, {'type': 'gcall-end', 'call': callId});
+    }
     await _finish(status ?? (startedAt != null ? 'answered' : (outgoing ? 'cancelled' : 'missed')));
   }
 
@@ -191,6 +194,14 @@ class CallService extends ChangeNotifier {
         if (!isGroup || id != callId || phase != CallPhase.active || age > 60000) return;
         await m.sendCallSignal(s.from, {'type': 'gcall-here', 'call': id, 'gcall': id});
         if (m.me.id.compareTo(s.from) < 0) await _offerTo(s.from);
+        return;
+      case 'gcall-end':
+        final group = p['group'] as String?;
+        if (group != null && groupCalls[group]?['call'] == id) {
+          groupCalls.remove(group);
+          notifyListeners();
+        }
+        if (isGroup && id == callId && phase == CallPhase.incoming) await _finish('missed');
         return;
       case 'gcall-here':
         if (!isGroup || id != callId) return;
@@ -443,7 +454,7 @@ class CallService extends ChangeNotifier {
     }
     await localStream?.dispose();
     localStream = null;
-    localRenderer.srcObject = null;
+    if (_localRendererReady) localRenderer.srcObject = null;
     if (groupKey != null && peers.isEmpty && outgoing) groupCalls.remove(groupKey);
     phase = CallPhase.idle;
     callId = null;
