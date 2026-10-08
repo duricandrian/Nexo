@@ -28,8 +28,13 @@ class _CallScreenState extends State<CallScreen> {
     _tick = Timer.periodic(const Duration(seconds: 1), (_) => setState(() {}));
   }
 
+  bool _closed = false;
+
+  // PopScope still blocks maybePop() until the next rebuild, so pop directly.
   void _onChange() {
-    if (!_calls.busy && mounted) Navigator.of(context).maybePop();
+    if (_calls.busy || _closed || !mounted) return;
+    _closed = true;
+    Navigator.of(context).pop();
   }
 
   @override
