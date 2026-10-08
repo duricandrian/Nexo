@@ -23,6 +23,7 @@ services:
       DOMAIN: ${DOMAIN}
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./public:/srv/public:ro
       - caddy-data:/data
     depends_on:
       - relay

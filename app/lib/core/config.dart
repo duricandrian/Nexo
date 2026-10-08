@@ -1,9 +1,9 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppConfig {
-  static const defaultServer = String.fromEnvironment('SERVER_URL', defaultValue: 'wss://chat.example.com/ws');
+  static const defaultServer = String.fromEnvironment('SERVER_URL', defaultValue: 'wss://chat.kandacodelab.com/ws');
   static const appName = 'Nexo';
-  static const privacyUrl = String.fromEnvironment('PRIVACY_URL', defaultValue: 'https://github.com/duricandrian/Nexo/blob/main/PRIVACY.md');
+  static const privacyUrl = String.fromEnvironment('PRIVACY_URL', defaultValue: 'https://chat.kandacodelab.com/privacy');
 
   static Future<String> serverUrl() async {
     final prefs = await SharedPreferences.getInstance();

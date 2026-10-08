@@ -1,3 +1,10 @@
 {$DOMAIN} {
-	reverse_proxy relay:8080
+	handle /privacy {
+		root * /srv/public
+		rewrite * /privacy.html
+		file_server
+	}
+	handle {
+		reverse_proxy relay:8080
+	}
 }

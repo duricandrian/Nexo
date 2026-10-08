@@ -33,7 +33,7 @@ Settings → Delete ID revokes your ID on the server and erases all local data.
 Nexo is not directed at children under 13.
 
 ## Contact
-Questions: privacy@example.com (replace with the operator's contact before publishing).
+Questions: mail@kandacodelab.com
 
 ---
 

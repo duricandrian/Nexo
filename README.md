@@ -28,7 +28,7 @@ Local dev: `cd server && npm install && npm test && node src/index.js`.
 cd app
 flutter pub get
 # Point the app to your server:
-flutter build appbundle --release --dart-define=SERVER_URL=wss://chat.yourdomain.com/ws \
+flutter build appbundle --release --dart-define=SERVER_URL=wss://chat.kandacodelab.com/ws \
   --dart-define=PRIVACY_URL=https://yourdomain.com/privacy
 ```
 Release signing: create `app/android/key.properties` (not committed):
