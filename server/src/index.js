@@ -1,5 +1,5 @@
 'use strict';
-// Arcana relay server: authenticates identities by public key, stores and
+// Nexo relay server: authenticates identities by public key, stores and
 // forwards opaque end-to-end encrypted envelopes, hosts encrypted blobs and
 // issues short-lived TURN credentials. It never sees plaintext.
 const http = require('http');
@@ -335,6 +335,6 @@ const janitor = setInterval(() => {
 
 wss.on('close', () => { clearInterval(heartbeat); clearInterval(janitor); });
 
-server.listen(PORT, () => console.log(`Arcana relay listening on :${PORT}`));
+server.listen(PORT, () => console.log(`Nexo relay listening on :${PORT}`));
 
 module.exports = { server, wss };

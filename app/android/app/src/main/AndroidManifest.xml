@@ -19,7 +19,7 @@
     <uses-feature android:name="android.hardware.microphone" android:required="false"/>
 
     <application
-        android:label="Arcana"
+        android:label="Nexo"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:allowBackup="false"
@@ -53,7 +53,7 @@
         <receiver android:exported="false" android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"/>
         <receiver android:exported="false" android:name="com.dexterous.flutterlocalnotifications.ActionBroadcastReceiver"/>
         <meta-data
-            android:name="ch.arcana.messenger.NOTIFICATION_ICON"
+            android:name="ch.nexo.messenger.NOTIFICATION_ICON"
             android:resource="@drawable/ic_notification" />
         <meta-data
             android:name="flutterEmbedding"

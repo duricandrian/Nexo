@@ -157,7 +157,7 @@ abstract class AppLocalizations {
   /// No description provided for @appLocked.
   ///
   /// In en, this message translates to:
-  /// **'Arcana is locked'**
+  /// **'Nexo is locked'**
   String get appLocked;
 
   /// No description provided for @appearance.
@@ -439,7 +439,7 @@ abstract class AppLocalizations {
   /// No description provided for @enterId.
   ///
   /// In en, this message translates to:
-  /// **'Arcana ID (8 characters)'**
+  /// **'Nexo ID (8 characters)'**
   String get enterId;
 
   /// No description provided for @enterSends.
@@ -745,7 +745,7 @@ abstract class AppLocalizations {
   /// No description provided for @privacySummary.
   ///
   /// In en, this message translates to:
-  /// **'Arcana does not collect phone numbers, e-mails or contacts. Messages are end-to-end encrypted and stored on the server only until delivered.'**
+  /// **'Nexo does not collect phone numbers, e-mails or contacts. Messages are end-to-end encrypted and stored on the server only until delivered.'**
   String get privacySummary;
 
   /// No description provided for @profile.
@@ -997,7 +997,7 @@ abstract class AppLocalizations {
   /// No description provided for @unlockReason.
   ///
   /// In en, this message translates to:
-  /// **'Unlock Arcana'**
+  /// **'Unlock Nexo'**
   String get unlockReason;
 
   /// No description provided for @unmute.
@@ -1081,7 +1081,7 @@ abstract class AppLocalizations {
   /// No description provided for @shareIdText.
   ///
   /// In en, this message translates to:
-  /// **'Chat with me securely on Arcana. My ID: {id}'**
+  /// **'Chat with me securely on Nexo. My ID: {id}'**
   String shareIdText(String id);
 
   /// No description provided for @sysGroupCreated.

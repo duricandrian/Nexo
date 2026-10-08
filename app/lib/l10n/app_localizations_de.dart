@@ -39,7 +39,7 @@ class AppLocalizationsDe extends AppLocalizations {
       'Auf diesem Gerät ist keine Bildschirmsperre eingerichtet';
 
   @override
-  String get appLocked => 'Arcana ist gesperrt';
+  String get appLocked => 'Nexo ist gesperrt';
 
   @override
   String get appearance => 'Darstellung';
@@ -185,7 +185,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get edited => 'bearbeitet';
 
   @override
-  String get enterId => 'Arcana-ID (8 Zeichen)';
+  String get enterId => 'Nexo-ID (8 Zeichen)';
 
   @override
   String get enterSends => 'Enter-Taste sendet';
@@ -345,7 +345,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get privacySummary =>
-      'Arcana erfasst keine Telefonnummern, E-Mails oder Kontakte. Nachrichten sind Ende-zu-Ende-verschlüsselt und werden auf dem Server nur bis zur Zustellung gespeichert.';
+      'Nexo erfasst keine Telefonnummern, E-Mails oder Kontakte. Nachrichten sind Ende-zu-Ende-verschlüsselt und werden auf dem Server nur bis zur Zustellung gespeichert.';
 
   @override
   String get profile => 'Profil';
@@ -474,7 +474,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get unlock => 'Entsperren';
 
   @override
-  String get unlockReason => 'Arcana entsperren';
+  String get unlockReason => 'Nexo entsperren';
 
   @override
   String get unmute => 'Benachrichtigungen an';
@@ -522,7 +522,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String shareIdText(String id) {
-    return 'Chatte sicher mit mir auf Arcana. Meine ID: $id';
+    return 'Chatte sicher mit mir auf Nexo. Meine ID: $id';
   }
 
   @override

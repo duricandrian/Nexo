@@ -50,7 +50,7 @@ class BackgroundService {
       serviceTypes: types,
       notificationTitle: await tr('serviceTitle'),
       notificationText: await tr('serviceText'),
-      notificationIcon: const NotificationIcon(metaDataName: 'ch.arcana.messenger.NOTIFICATION_ICON'),
+      notificationIcon: const NotificationIcon(metaDataName: 'ch.nexo.messenger.NOTIFICATION_ICON'),
       callback: backgroundEntry,
     );
   }
@@ -85,7 +85,7 @@ class _NotifyHandler extends TaskHandler {
 
   Future<String> _name(String id) async {
     try {
-      final db = await openDatabase(p.join(await getDatabasesPath(), 'arcana.db'), readOnly: true, singleInstance: false);
+      final db = await openDatabase(p.join(await getDatabasesPath(), 'nexo.db'), readOnly: true, singleInstance: false);
       final rows = await db.query('contacts', columns: ['name', 'nick'], where: 'id = ?', whereArgs: [id]);
       await db.close();
       if (rows.isNotEmpty) {

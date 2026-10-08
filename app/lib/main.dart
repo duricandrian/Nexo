@@ -28,19 +28,19 @@ Future<void> main() async {
   await BackgroundService.init();
   final settings = await AppSettings.load();
   final identity = await Identity.load();
-  runApp(ArcanaApp(settings: settings, identity: identity));
+  runApp(NexoApp(settings: settings, identity: identity));
 }
 
-class ArcanaApp extends StatefulWidget {
+class NexoApp extends StatefulWidget {
   final AppSettings settings;
   final Identity? identity;
-  const ArcanaApp({super.key, required this.settings, this.identity});
+  const NexoApp({super.key, required this.settings, this.identity});
 
   @override
-  State<ArcanaApp> createState() => _ArcanaAppState();
+  State<NexoApp> createState() => _NexoAppState();
 }
 
-class _ArcanaAppState extends State<ArcanaApp> with WidgetsBindingObserver {
+class _NexoAppState extends State<NexoApp> with WidgetsBindingObserver {
   Messenger? _messenger;
   CallService? _calls;
   bool _locked = false;

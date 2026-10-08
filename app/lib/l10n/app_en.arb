@@ -9,7 +9,7 @@
   "appLock": "App lock",
   "appLockHint": "Require fingerprint, face or device PIN to open",
   "appLockUnavailable": "No screen lock set up on this device",
-  "appLocked": "Arcana is locked",
+  "appLocked": "Nexo is locked",
   "appearance": "Appearance",
   "backupData": "Backup data",
   "backupId": "Back up ID",
@@ -56,7 +56,7 @@
   "editMessage": "Edit message",
   "editName": "Edit name",
   "edited": "edited",
-  "enterId": "Arcana ID (8 characters)",
+  "enterId": "Nexo ID (8 characters)",
   "enterSends": "Enter key sends",
   "errorInvalidId": "Invalid ID",
   "errorKeyMismatch": "The key does not match this ID!",
@@ -107,7 +107,7 @@
   "pin": "Pin chat",
   "privacy": "Privacy",
   "privacyPolicy": "Privacy policy",
-  "privacySummary": "Arcana does not collect phone numbers, e-mails or contacts. Messages are end-to-end encrypted and stored on the server only until delivered.",
+  "privacySummary": "Nexo does not collect phone numbers, e-mails or contacts. Messages are end-to-end encrypted and stored on the server only until delivered.",
   "profile": "Profile",
   "readReceipts": "Read receipts",
   "readReceiptsHint": "Let contacts see when you read their messages",
@@ -149,7 +149,7 @@
   "typingIndicators": "Typing indicator",
   "unknownContact": "This sender is not in your contacts.",
   "unlock": "Unlock",
-  "unlockReason": "Unlock Arcana",
+  "unlockReason": "Unlock Nexo",
   "unmute": "Unmute notifications",
   "unpin": "Unpin chat",
   "verificationLevel": "Verification level",
@@ -177,7 +177,7 @@
       }
     }
   },
-  "shareIdText": "Chat with me securely on Arcana. My ID: {id}",
+  "shareIdText": "Chat with me securely on Nexo. My ID: {id}",
   "@shareIdText": {
     "placeholders": {
       "id": {

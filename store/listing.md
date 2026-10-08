@@ -1,6 +1,6 @@
 # Google Play Store listing
 
-App name: **Arcana – Private Messenger**
+App name: **Nexo – Private Messenger**
 Category: Communication · Content rating: Everyone (IARC questionnaire: user-to-user communication = yes)
 Data safety: No data collected/shared except "App interactions: none"; messages are E2E encrypted; user can request deletion (in-app).
 
@@ -8,7 +8,7 @@ Data safety: No data collected/shared except "App interactions: none"; messages 
 **Short description (80):** Encrypted messenger without phone number. Chats, groups and calls – private.
 
 **Full description:**
-Arcana is a private messenger that works without a phone number or e-mail. Your identity is a random ID created on your device.
+Nexo is a private messenger that works without a phone number or e-mail. Your identity is a random ID created on your device.
 
 • No phone number, no e-mail, no address-book upload
 • End-to-end encryption for messages, images, files, voice messages and calls
@@ -25,7 +25,7 @@ Arcana is a private messenger that works without a phone number or e-mail. Your 
 **Kurzbeschreibung:** Verschlüsselter Messenger ohne Telefonnummer. Chats, Gruppen und Anrufe – privat.
 
 **Vollständige Beschreibung:**
-Arcana ist ein privater Messenger, der ohne Telefonnummer und E-Mail funktioniert. Deine Identität ist eine zufällige ID, die auf deinem Gerät erstellt wird.
+Nexo ist ein privater Messenger, der ohne Telefonnummer und E-Mail funktioniert. Deine Identität ist eine zufällige ID, die auf deinem Gerät erstellt wird.
 
 • Keine Telefonnummer, keine E-Mail, kein Adressbuch-Upload
 • Ende-zu-Ende-Verschlüsselung für Nachrichten, Bilder, Dateien, Sprachnachrichten und Anrufe
@@ -42,7 +42,7 @@ Arcana ist ein privater Messenger, der ohne Telefonnummer und E-Mail funktionier
 **Краткое описание:** Зашифрованный мессенджер без номера телефона. Чаты, группы и звонки – приватно.
 
 **Полное описание:**
-Arcana — приватный мессенджер, который работает без номера телефона и e-mail. Ваша личность — случайный ID, созданный на устройстве.
+Nexo — приватный мессенджер, который работает без номера телефона и e-mail. Ваша личность — случайный ID, созданный на устройстве.
 
 • Без номера телефона, e-mail и загрузки контактов
 • Сквозное шифрование сообщений, изображений, файлов, голосовых сообщений и звонков

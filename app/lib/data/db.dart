@@ -8,7 +8,7 @@ class AppDatabase {
 
   static Future<Database> open() async {
     if (_db != null) return _db!;
-    final path = p.join(await getDatabasesPath(), 'arcana.db');
+    final path = p.join(await getDatabasesPath(), 'nexo.db');
     _db = await openDatabase(path, version: 1, onCreate: (db, v) async {
       await db.execute('''CREATE TABLE contacts(
         id TEXT PRIMARY KEY, pk TEXT NOT NULL, name TEXT, nick TEXT,
@@ -38,7 +38,7 @@ class AppDatabase {
   }
 
   static Future<void> wipe() async {
-    final path = p.join(await getDatabasesPath(), 'arcana.db');
+    final path = p.join(await getDatabasesPath(), 'nexo.db');
     await _db?.close();
     _db = null;
     await deleteDatabase(path);

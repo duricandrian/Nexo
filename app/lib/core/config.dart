@@ -2,8 +2,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class AppConfig {
   static const defaultServer = String.fromEnvironment('SERVER_URL', defaultValue: 'wss://chat.example.com/ws');
-  static const appName = 'Arcana';
-  static const privacyUrl = String.fromEnvironment('PRIVACY_URL', defaultValue: 'https://github.com/arcana-messenger/arcana/blob/main/PRIVACY.md');
+  static const appName = 'Nexo';
+  static const privacyUrl = String.fromEnvironment('PRIVACY_URL', defaultValue: 'https://github.com/duricandrian/Nexo/blob/main/PRIVACY.md');
 
   static Future<String> serverUrl() async {
     final prefs = await SharedPreferences.getInstance();

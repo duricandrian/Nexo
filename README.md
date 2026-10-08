@@ -1,4 +1,4 @@
-# Arcana – private messenger
+# Nexo – private messenger
 
 A Threema-style end-to-end encrypted messenger: **no phone number, no e-mail**. Each user gets a random 8-character ID generated on the device.
 
@@ -44,4 +44,4 @@ Create a keystore with `keytool -genkey -v -keystore upload-keystore.jks -keyalg
 1. Deploy the server on a domain, build the AAB with that `SERVER_URL`.
 2. Host `PRIVACY.md` publicly and put the URL in the Play Console and `PRIVACY_URL`.
 3. Play Console: create app, upload AAB, fill in the listing from `store/listing.md`, Data safety, content rating, and the **foreground service** declaration (remote messaging + microphone for calls).
-4. Change the application ID `ch.arcana.arcana` in `app/android/app/build.gradle.kts` if you want your own.
+4. Change the application ID `ch.nexo.messenger` in `app/android/app/build.gradle.kts` if you want your own.

@@ -37,7 +37,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appLockUnavailable => 'No screen lock set up on this device';
 
   @override
-  String get appLocked => 'Arcana is locked';
+  String get appLocked => 'Nexo is locked';
 
   @override
   String get appearance => 'Appearance';
@@ -183,7 +183,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get edited => 'edited';
 
   @override
-  String get enterId => 'Arcana ID (8 characters)';
+  String get enterId => 'Nexo ID (8 characters)';
 
   @override
   String get enterSends => 'Enter key sends';
@@ -340,7 +340,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get privacySummary =>
-      'Arcana does not collect phone numbers, e-mails or contacts. Messages are end-to-end encrypted and stored on the server only until delivered.';
+      'Nexo does not collect phone numbers, e-mails or contacts. Messages are end-to-end encrypted and stored on the server only until delivered.';
 
   @override
   String get profile => 'Profile';
@@ -469,7 +469,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get unlock => 'Unlock';
 
   @override
-  String get unlockReason => 'Unlock Arcana';
+  String get unlockReason => 'Unlock Nexo';
 
   @override
   String get unmute => 'Unmute notifications';
@@ -517,7 +517,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String shareIdText(String id) {
-    return 'Chat with me securely on Arcana. My ID: $id';
+    return 'Chat with me securely on Nexo. My ID: $id';
   }
 
   @override

@@ -116,7 +116,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
           ),
           const SizedBox(height: 24),
-          const Icon(Icons.shield_moon_outlined, size: 96, color: brandColor),
+          Center(child: Image.asset('assets/logo.png', width: 120, height: 120)),
           const SizedBox(height: 16),
           Text(AppConfig.appName, textAlign: TextAlign.center, style: Theme.of(context).textTheme.headlineMedium),
           const SizedBox(height: 8),

@@ -168,7 +168,7 @@ class Messenger extends ChangeNotifier {
         whereArgs: beforeTs == null ? [chat] : [chat, beforeTs],
         orderBy: 'ts DESC',
         limit: limit);
-    return rows.map(Message.fromRow).toList().reversed.toList();
+    return rows.map(Message.fromRow).toList();
   }
 
   Future<List<Message>> searchMessages(String chat, String q) async {
@@ -195,7 +195,7 @@ class Messenger extends ChangeNotifier {
 
   // ---------------------------------------------------------------- contacts
 
-  static String qrPayload(Identity me) => 'arcana:${me.id}:${base64Url.encode(me.publicKey)}';
+  static String qrPayload(Identity me) => 'nexo:${me.id}:${base64Url.encode(me.publicKey)}';
 
   Future<Contact> addContactById(String rawId) async {
     final id = rawId.trim().toUpperCase();
@@ -216,7 +216,7 @@ class Messenger extends ChangeNotifier {
 
   Future<Contact> addContactFromQr(String data) async {
     final parts = data.trim().split(':');
-    if (parts.length != 3 || parts[0] != 'arcana') throw ContactException('invalid');
+    if (parts.length != 3 || parts[0] != 'nexo') throw ContactException('invalid');
     final id = parts[1].toUpperCase();
     if (id == me.id) throw ContactException('self');
     final pk = base64Url.decode(parts[2]);

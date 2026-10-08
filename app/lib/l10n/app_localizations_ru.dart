@@ -38,7 +38,7 @@ class AppLocalizationsRu extends AppLocalizations {
       'На устройстве не настроена блокировка экрана';
 
   @override
-  String get appLocked => 'Arcana заблокирована';
+  String get appLocked => 'Nexo заблокирована';
 
   @override
   String get appearance => 'Оформление';
@@ -183,7 +183,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get edited => 'изменено';
 
   @override
-  String get enterId => 'Arcana ID (8 символов)';
+  String get enterId => 'Nexo ID (8 символов)';
 
   @override
   String get enterSends => 'Enter отправляет';
@@ -342,7 +342,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get privacySummary =>
-      'Arcana не собирает номера телефонов, e-mail и контакты. Сообщения зашифрованы и хранятся на сервере только до доставки.';
+      'Nexo не собирает номера телефонов, e-mail и контакты. Сообщения зашифрованы и хранятся на сервере только до доставки.';
 
   @override
   String get profile => 'Профиль';
@@ -470,7 +470,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get unlock => 'Разблокировать';
 
   @override
-  String get unlockReason => 'Разблокировать Arcana';
+  String get unlockReason => 'Разблокировать Nexo';
 
   @override
   String get unmute => 'Включить звук';
@@ -518,7 +518,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String shareIdText(String id) {
-    return 'Пишите мне безопасно в Arcana. Мой ID: $id';
+    return 'Пишите мне безопасно в Nexo. Мой ID: $id';
   }
 
   @override

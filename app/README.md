@@ -1,3 +1,3 @@
-# arcana
+# Nexo
 
 A new Flutter project.

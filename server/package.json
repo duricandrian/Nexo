@@ -1,7 +1,7 @@
 {
-  "name": "arcana-relay",
+  "name": "nexo-relay",
   "version": "1.0.0",
-  "description": "Zero-knowledge relay server for Arcana Messenger",
+  "description": "Zero-knowledge relay server for Nexo Messenger",
   "main": "src/index.js",
   "type": "commonjs",
   "scripts": {

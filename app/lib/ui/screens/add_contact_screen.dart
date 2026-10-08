@@ -102,7 +102,7 @@ class _QrScanScreenState extends State<QrScanScreen> {
         onDetect: (capture) {
           if (_done) return;
           final v = capture.barcodes.isEmpty ? null : capture.barcodes.first.rawValue;
-          if (v != null && v.startsWith('arcana:')) {
+          if (v != null && v.startsWith('nexo:')) {
             _done = true;
             Navigator.pop(context, v);
           }

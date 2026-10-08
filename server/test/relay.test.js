@@ -8,7 +8,7 @@ const nacl = require('tweetnacl');
 const WebSocket = require('ws');
 
 process.env.PORT = '18080';
-process.env.DATA_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'arcana-'));
+process.env.DATA_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'nexo-'));
 let srv;
 before(() => { srv = require('../src/index.js'); });
 after(() => { srv.wss.close(); srv.server.close(); });
