@@ -2,7 +2,7 @@
 
 App name: **Nexo – Private Messenger**
 Category: Communication · Content rating: Everyone (IARC questionnaire: user-to-user communication = yes)
-Data safety: No data collected/shared except "App interactions: none"; messages are E2E encrypted; user can request deletion (in-app).
+Data safety: see "Data safety form (Play Console)" at the end of this file.
 
 ## English
 **Short description (80):** Encrypted messenger without phone number. Chats, groups and calls – private.
@@ -54,3 +54,25 @@ Nexo — приватный мессенджер, который работае�
 • Блокировка приложения отпечатком/лицом, тёмная тема
 • Немецкий, английский и русский
 • Без рекламы и слежки
+
+## Data safety form (Play Console)
+
+Answers for the Firebase backend. Message, media and call content is end-to-end encrypted on the device and is not readable by the developer or Google, so it is not declared as collected.
+
+- **Does your app collect or share any of the required user data types?** Yes
+- **Is all of the user data collected by your app encrypted in transit?** Yes (TLS to Firebase; content additionally end-to-end encrypted)
+- **Do you provide a way for users to request that their data is deleted?** Yes: Settings → Delete ID removes the identity, queued messages and the Firebase account. Web: mail@kandacodelab.com
+
+| Data type | Collected | Shared | Optional | Purpose | Why |
+|---|---|---|---|---|---|
+| Personal info → User IDs | Yes | No | No | App functionality | Random Nexo ID and anonymous Firebase account, needed to route encrypted messages |
+| Device or other IDs | Yes | No | Yes (notification permission) | App functionality | Firebase Cloud Messaging push token for content-free wake-ups |
+| Messages, Photos, Audio, Files | No | No | – | – | End-to-end encrypted; only sender and recipient can read them |
+| Contacts, Location, Name, Email, Phone | No | No | – | – | Not accessed |
+| App activity, Diagnostics, Analytics | No | No | – | – | No analytics or crash reporting SDK included |
+
+Notes:
+- Google Firebase is a service provider processing data on the developer's behalf; per Play policy this is not "sharing".
+- Encrypted envelopes are deleted after delivery, at the latest after 30 days; encrypted blobs after 14 days.
+- Calls connect peer-to-peer (DTLS-SRTP); a TURN relay, if configured, only forwards encrypted media.
+

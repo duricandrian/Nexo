@@ -27,6 +27,8 @@ docker compose up -d   # Caddy gets a Let's Encrypt cert for DOMAIN automaticall
 Open ports: 80/443 TCP (Caddy), 3478 TCP/UDP and 49160-49200 UDP (coturn).
 Local dev: `cd server && npm install && npm test && node src/index.js`.
 
+Firebase rules/functions tests: `cd firebase/test && npm ci && npm test` (runs the emulators; needs Java).
+
 ## Build the app
 ```bash
 cd app

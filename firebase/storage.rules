@@ -6,6 +6,7 @@ service firebase.storage {
     match /blobs/{blobId} {
       allow get: if request.auth != null && request.auth.token.nid is string;
       allow create: if request.auth != null && request.auth.token.nid is string
+        && resource == null
         && request.resource.size < 100 * 1024 * 1024
         && blobId.matches('[A-Za-z0-9_-]{16,64}');
       allow list, update, delete: if false;

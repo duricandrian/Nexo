@@ -107,7 +107,10 @@ exports.bind = onCall(async (req) => {
 });
 
 /** STUN/TURN servers for calls. TURN uses the coturn REST-API scheme. */
-exports.ice = onCall(async (req) => {
+// TURN_URLS comes from functions/.env; TURN_SECRET must then be a Secret Manager
+// secret, which v2 functions only receive when they declare it.
+const turnSecrets = process.env.TURN_URLS && !process.env.TURN_USERNAME ? ['TURN_SECRET'] : [];
+exports.ice = onCall({ secrets: turnSecrets }, async (req) => {
   requireAuth(req);
   const ice = [{ urls: (process.env.STUN_URLS || 'stun:stun.l.google.com:19302').split(',') }];
   const turnUrls = process.env.TURN_URLS;

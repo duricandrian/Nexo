@@ -30,10 +30,26 @@ firebase use --add            # dein Projekt wählen
 (cd functions && npm ci)
 firebase deploy --only firestore,storage,functions
 ```
-Optional TURN für Anrufe in schwierigen Netzen (z.B. eigener coturn oder ein Anbieter):
+Optional TURN für Anrufe in schwierigen Netzen (Firmen-WLAN, manche Mobilfunknetze). Firebase hat keinen eigenen TURN-Server, darum entweder ein eigener coturn (siehe `server/`) oder ein Anbieter (z.B. Metered, Twilio, Xirsys):
+
+- **coturn mit `use-auth-secret`** (empfohlen, kurzlebige Zugangsdaten je Anruf):
+  ```bash
+  echo 'TURN_URLS=turn:turn.example.com:3478,turns:turn.example.com:5349' > functions/.env
+  firebase functions:secrets:set TURN_SECRET      # = static-auth-secret von coturn
+  firebase deploy --only functions
+  ```
+- **Anbieter mit festem Benutzer/Passwort**, in `functions/.env`:
+  ```
+  TURN_URLS=turn:relay.example.com:443?transport=tcp
+  TURN_USERNAME=...
+  TURN_CREDENTIAL=...
+  ```
+
+`functions/.env` ist in `.gitignore` und wird nicht hochgeladen.
+
+### Tests der Sicherheitsregeln und Functions
 ```bash
-firebase functions:secrets:set TURN_SECRET   # oder TURN_USERNAME / TURN_CREDENTIAL
-# TURN_URLS z.B. in functions/.env:  TURN_URLS=turn:turn.example.com:3478
+cd firebase/test && npm ci && npm test   # startet die Emulatoren, braucht Java
 ```
 
 ## 3. App bauen
