@@ -1,0 +1,269 @@
+{
+  "@@locale": "en",
+  "about": "About",
+  "accept": "Accept",
+  "add": "Add",
+  "addContact": "Add contact",
+  "admin": "Admin",
+  "advanced": "Advanced",
+  "appLock": "App lock",
+  "appLockHint": "Require fingerprint, face or device PIN to open",
+  "appLockUnavailable": "No screen lock set up on this device",
+  "appLocked": "Arcana is locked",
+  "appearance": "Appearance",
+  "backupData": "Backup data",
+  "backupId": "Back up ID",
+  "backupIdHint": "Password-protected export of your identity",
+  "backupInvalid": "Backup or password is wrong",
+  "backupPasswordHint": "Choose a strong password (min. 8 characters). Without it the backup cannot be restored.",
+  "block": "Block",
+  "callEnded": "Call ended",
+  "calls": "Calls",
+  "camera": "Camera",
+  "cancel": "Cancel",
+  "captionOptional": "Caption (optional)",
+  "chats": "Chats",
+  "clearChat": "Clear chat",
+  "clearChatConfirm": "Delete all messages in this chat on this device?",
+  "commonGroups": "Groups in common",
+  "connecting": "Connecting…",
+  "contactBlocked": "You blocked this contact",
+  "contactInfo": "Contact info",
+  "contactVerified": "Contact verified",
+  "contacts": "Contacts",
+  "copied": "Copied",
+  "copy": "Copy",
+  "create": "Create",
+  "createId": "Create my ID",
+  "decline": "Decline",
+  "delete": "Delete",
+  "deleteChat": "Delete chat",
+  "deleteChatConfirm": "This chat and its messages will be deleted from this device.",
+  "deleteContact": "Delete contact",
+  "deleteContactConfirm": "Delete this contact and the chat?",
+  "deleteForEveryone": "Delete for everyone",
+  "deleteForMe": "Delete for me",
+  "deleteGroup": "Delete group",
+  "deleteId": "Delete ID",
+  "deleteIdConfirm": "Your ID will be permanently revoked on the server and all data on this device deleted. This cannot be undone.",
+  "deleteIdHint": "Revoke identity and erase all data",
+  "dissolveGroup": "Dissolve group",
+  "downloadFailed": "Download failed",
+  "draft": "Draft",
+  "e2eNotice": "Messages and calls are end-to-end encrypted. Nobody outside this chat, not even the server, can read them.",
+  "edit": "Edit",
+  "editMembers": "Edit members",
+  "editMessage": "Edit message",
+  "editName": "Edit name",
+  "edited": "edited",
+  "enterId": "Arcana ID (8 characters)",
+  "enterSends": "Enter key sends",
+  "errorInvalidId": "Invalid ID",
+  "errorKeyMismatch": "The key does not match this ID!",
+  "errorNotFound": "ID not found",
+  "errorSelf": "That is your own ID",
+  "featureCalls": "Encrypted voice & video calls, also in groups",
+  "featureE2E": "End-to-end encryption for everything",
+  "featureNoPhone": "No phone number, no e-mail",
+  "file": "File",
+  "fileTooLarge": "File is too large (max. 100 MB)",
+  "gallery": "Gallery",
+  "groupCallActive": "Group call in progress",
+  "groupInfo": "Group info",
+  "groupName": "Group name",
+  "groupNameRequired": "Please enter a group name",
+  "groups": "Groups",
+  "id": "ID",
+  "identityRevoked": "This ID has been revoked. Please reinstall the app to create a new ID.",
+  "incomingCall": "Incoming call",
+  "incomingVideoCall": "Incoming video call",
+  "join": "Join",
+  "keyFingerprint": "Key fingerprint",
+  "language": "Language",
+  "leaveGroup": "Leave group",
+  "leaveGroupConfirm": "You will no longer receive messages from this group.",
+  "location": "Location",
+  "messageDeleted": "This message was deleted",
+  "messageHint": "Message",
+  "messageInfo": "Message info",
+  "micPermission": "Microphone permission required",
+  "mute": "Mute notifications",
+  "myId": "My ID",
+  "myIdHint": "Let others scan this code to add you securely.",
+  "newChat": "New chat",
+  "newGroup": "New group",
+  "nickname": "Nickname",
+  "nicknameOptional": "Nickname (optional)",
+  "noCalls": "No calls yet",
+  "noChats": "No chats yet.\nAdd a contact to start chatting.",
+  "noContacts": "No contacts yet",
+  "notGroupMember": "You are no longer a member of this group",
+  "notVerified": "Not verified – scan QR code to verify",
+  "offline": "Offline",
+  "ok": "OK",
+  "online": "Online",
+  "password": "Password",
+  "passwordRules": "Passwords must match and have at least 8 characters",
+  "pin": "Pin chat",
+  "privacy": "Privacy",
+  "privacyPolicy": "Privacy policy",
+  "privacySummary": "Arcana does not collect phone numbers, e-mails or contacts. Messages are end-to-end encrypted and stored on the server only until delivered.",
+  "profile": "Profile",
+  "readReceipts": "Read receipts",
+  "readReceiptsHint": "Let contacts see when you read their messages",
+  "recording": "Recording",
+  "renameGroup": "Rename group",
+  "repeatPassword": "Repeat password",
+  "reply": "Reply",
+  "restore": "Restore",
+  "restoreBackup": "Restore ID from backup",
+  "retry": "Retry",
+  "ringing": "Ringing…",
+  "save": "Save",
+  "scanQr": "Scan QR code",
+  "scanQrHint": "Scanning the QR code in person gives the highest trust level (verified).",
+  "search": "Search",
+  "security": "Security",
+  "selectMembers": "Select at least one member",
+  "send": "Send",
+  "sendImage": "Send image",
+  "sender": "Sender",
+  "serverAddress": "Server address",
+  "serverUnreachable": "Server unreachable. Check your internet connection.",
+  "settings": "Settings",
+  "share": "Share",
+  "status": "Status",
+  "statusDelivered": "Delivered",
+  "statusFailed": "Failed",
+  "statusPending": "Pending",
+  "statusRead": "Read",
+  "statusReceived": "Received",
+  "statusSent": "Sent",
+  "systemDefault": "System default",
+  "theme": "Theme",
+  "themeDark": "Dark",
+  "themeLight": "Light",
+  "time": "Time",
+  "today": "Today",
+  "typing": "typing…",
+  "typingIndicators": "Typing indicator",
+  "unknownContact": "This sender is not in your contacts.",
+  "unlock": "Unlock",
+  "unlockReason": "Unlock Arcana",
+  "unmute": "Unmute notifications",
+  "unpin": "Unpin chat",
+  "verificationLevel": "Verification level",
+  "verifiedQr": "Verified by QR code",
+  "version": "Version",
+  "voiceMessage": "Voice message",
+  "welcomeText": "Private messaging without phone number. Your ID is created on this device.",
+  "sysYouLeft": "You left the group",
+  "sysYouWereRemoved": "You were removed from the group",
+  "yesterday": "Yesterday",
+  "you": "You",
+  "createdBy": "Created by {name}",
+  "@createdBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "incomingGroupCall": "{name} started a group call",
+  "@incomingGroupCall": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "shareIdText": "Chat with me securely on Arcana. My ID: {id}",
+  "@shareIdText": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "sysGroupCreated": "{name} created the group",
+  "@sysGroupCreated": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "sysKeyChanged": "Security key of {name} changed",
+  "@sysKeyChanged": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "sysAddedToGroup": "{name} added you to the group",
+  "@sysAddedToGroup": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "sysMemberLeft": "{name} left the group",
+  "@sysMemberLeft": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "sysMemberAdded": "{name} added {member}",
+  "@sysMemberAdded": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "member": {
+        "type": "String"
+      }
+    }
+  },
+  "sysMemberRemoved": "{name} removed {member}",
+  "@sysMemberRemoved": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "member": {
+        "type": "String"
+      }
+    }
+  },
+  "sysRenamed": "{name} renamed the group to \"{title}\"",
+  "@sysRenamed": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "membersCount": "{count, plural, =1{1 member} other{{count} members}}",
+  "@membersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "participants": "{count, plural, =1{1 participant} other{{count} participants}}",
+  "@participants": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
+}

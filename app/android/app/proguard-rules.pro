@@ -1,0 +1,6 @@
+-keep class org.webrtc.** { *; }
+-keep class com.cloudwebrtc.webrtc.** { *; }
+-keep class com.dexterous.** { *; }
+-keep class com.pravera.flutter_foreground_task.** { *; }
+-dontwarn org.webrtc.**
+-dontwarn com.google.android.play.core.**

@@ -1,0 +1,52 @@
+# Production deployment: relay + TURN server + automatic HTTPS (Caddy).
+# 1. Point DNS A records for ${DOMAIN} at this host.
+# 2. cp .env.example .env and fill in values.
+# 3. docker compose up -d
+services:
+  relay:
+    build: .
+    restart: unless-stopped
+    environment:
+      TURN_SECRET: ${TURN_SECRET}
+      TURN_URLS: turn:${DOMAIN}:3478?transport=udp,turn:${DOMAIN}:3478?transport=tcp
+      STUN_URLS: stun:${DOMAIN}:3478
+    volumes:
+      - relay-data:/data
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+    depends_on:
+      - relay
+
+  coturn:
+    image: coturn/coturn:4.6
+    restart: unless-stopped
+    network_mode: host
+    command:
+      - -n
+      - --listening-port=3478
+      - --fingerprint
+      - --use-auth-secret
+      - --static-auth-secret=${TURN_SECRET}
+      - --realm=${DOMAIN}
+      - --min-port=49160
+      - --max-port=49200
+      - --no-cli
+      - --no-tlsv1
+      - --no-tlsv1_1
+      - --denied-peer-ip=10.0.0.0-10.255.255.255
+      - --denied-peer-ip=172.16.0.0-172.31.255.255
+      - --denied-peer-ip=192.168.0.0-192.168.255.255
+
+volumes:
+  relay-data:
+  caddy-data:

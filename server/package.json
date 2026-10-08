@@ -1,0 +1,17 @@
+{
+  "name": "arcana-relay",
+  "version": "1.0.0",
+  "description": "Zero-knowledge relay server for Arcana Messenger",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test test/"
+  },
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "tweetnacl": "^1.0.3",
+    "ws": "^8.18.0"
+  }
+}

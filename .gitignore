@@ -1,0 +1,6 @@
+.DS_Store
+*.jks
+*.keystore
+key.properties
+.env
+node_modules/
