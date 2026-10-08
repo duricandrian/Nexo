@@ -5,6 +5,7 @@ import 'package:local_auth/local_auth.dart';
 import 'package:provider/provider.dart';
 
 import 'core/config.dart';
+import 'core/firebase_config.dart';
 import 'core/l10n.dart';
 import 'core/settings.dart';
 import 'core/theme.dart';
@@ -23,6 +24,7 @@ final navigatorKey = GlobalKey<NavigatorState>();
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await FirebaseConfig.init();
   FlutterForegroundTask.initCommunicationPort();
   await Notifications.init();
   await BackgroundService.init();

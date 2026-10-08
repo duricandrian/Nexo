@@ -4,7 +4,6 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
-import 'package:http/http.dart' as http;
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -15,6 +14,7 @@ import '../core/config.dart';
 import '../core/crypto.dart';
 import '../data/db.dart';
 import '../data/models.dart';
+import 'background.dart';
 import 'connection.dart';
 import 'identity.dart';
 import 'notifications.dart';
@@ -91,6 +91,7 @@ class Messenger extends ChangeNotifier {
   void start() {
     conn = Connection(url: serverUrl, id: me.id, secretKey: me.secretKey);
     conn.onAuthed = () {
+      PushService.register(me.id);
       _flushOutbox();
       _retryUploads();
     };
@@ -522,12 +523,7 @@ class Messenger extends ChangeNotifier {
     try {
       final bytes = await File(msg.localPath!).readAsBytes();
       final enc = await Crypto.encryptBlob(bytes);
-      final res = await http
-          .post(AppConfig.blobBase(serverUrl).replace(path: '/blob'),
-              headers: {'authorization': 'Bearer ${conn.token}', 'content-type': 'application/octet-stream'}, body: enc.data)
-          .timeout(const Duration(minutes: 5));
-      if (res.statusCode != 200) throw Exception('upload ${res.statusCode}');
-      final blobId = (jsonDecode(res.body) as Map)['id'] as String;
+      final blobId = await conn.uploadBlob(enc.data).timeout(const Duration(minutes: 5));
       msg.meta['blob'] = blobId;
       msg.meta['key'] = base64.encode(enc.key);
       await db.update('messages', {'meta': jsonEncode(msg.meta)}, where: 'chat = ? AND id = ?', whereArgs: [msg.chat, msg.id]);
@@ -944,10 +940,9 @@ class Messenger extends ChangeNotifier {
     final key = msg.meta['key'] as String?;
     if (blob == null || key == null || conn.token == null) return null;
     try {
-      final res = await http.get(AppConfig.blobBase(serverUrl).replace(path: '/blob/$blob'),
-          headers: {'authorization': 'Bearer ${conn.token}'}).timeout(const Duration(minutes: 5));
-      if (res.statusCode != 200) return null;
-      final plain = await Crypto.decryptBlob(res.bodyBytes, base64.decode(key));
+      final data = await conn.downloadBlob(blob).timeout(const Duration(minutes: 5));
+      if (data == null) return null;
+      final plain = await Crypto.decryptBlob(data, base64.decode(key));
       if (plain == null) return null;
       final f = await _storeLocal(plain, msg.meta['name'] as String? ?? '${msg.type}_${msg.id}');
       await db.update('messages', {'local_path': f.path}, where: 'chat = ? AND id = ?', whereArgs: [msg.chat, msg.id]);

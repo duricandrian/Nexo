@@ -1,0 +1,44 @@
+rules_version = '2';
+// Identities are bound to anonymous Firebase accounts through the custom claim
+// `nid` (set by the register/bind functions). All payloads are end-to-end
+// encrypted on the device; these rules only control who may queue and fetch them.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function myId() {
+      return request.auth != null && request.auth.token.nid is string ? request.auth.token.nid : null;
+    }
+
+    // Public keys, readable by every registered user (contact lookup).
+    match /ids/{id} {
+      allow get: if myId() != null;
+      allow list, write: if false;
+    }
+
+    // Owner-only data such as FCM push tokens.
+    match /private/{id} {
+      allow read, write: if myId() == id;
+    }
+
+    // Encrypted envelope queue of a recipient.
+    match /queues/{to}/msgs/{mid} {
+      allow read, delete: if myId() == to;
+      allow create: if myId() != null
+        && request.resource.data.keys().hasOnly(['from', 'data', 'kind', 'ts'])
+        && request.resource.data.from == myId()
+        && request.resource.data.data is string
+        && request.resource.data.data.size() < 700000
+        && request.resource.data.kind in ['msg', 'eph', 'call']
+        && request.resource.data.ts == request.time
+        && exists(/databases/$(database)/documents/ids/$(to));
+      // Idempotent resend of the same envelope by the same sender.
+      allow update: if myId() != null
+        && resource.data.from == myId()
+        && request.resource.data.from == myId()
+        && request.resource.data.keys().hasOnly(['from', 'data', 'kind', 'ts']);
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

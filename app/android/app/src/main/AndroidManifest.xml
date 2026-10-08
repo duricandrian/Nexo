@@ -10,9 +10,7 @@
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_REMOTE_MESSAGING"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
     <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT"/>
     <uses-feature android:name="android.hardware.camera" android:required="false"/>
@@ -48,7 +46,7 @@
         </activity>
         <service
             android:name="com.pravera.flutter_foreground_task.service.ForegroundService"
-            android:foregroundServiceType="remoteMessaging|microphone"
+            android:foregroundServiceType="microphone"
             android:exported="false"/>
         <receiver android:exported="false" android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"/>
         <receiver android:exported="false" android:name="com.dexterous.flutterlocalnotifications.ActionBroadcastReceiver"/>

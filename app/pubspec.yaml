@@ -7,9 +7,15 @@ environment:
   sdk: ^3.13.5
 
 dependencies:
+  cloud_firestore: ^6.10.0
+  cloud_functions: ^6.5.0
   crypto: ^3.0.7
   emoji_picker_flutter: ^4.5.4
   file_picker: ^13.1.0
+  firebase_auth: ^6.7.0
+  firebase_core: ^4.15.0
+  firebase_messaging: ^16.7.0
+  firebase_storage: ^13.6.0
   flutter:
     sdk: flutter
   flutter_foreground_task: ^11.0.3

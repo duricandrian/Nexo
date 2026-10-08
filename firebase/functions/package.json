@@ -1,0 +1,12 @@
+{
+  "name": "nexo-functions",
+  "private": true,
+  "main": "index.js",
+  "engines": { "node": "20" },
+  "scripts": { "test": "node --test test/" },
+  "dependencies": {
+    "firebase-admin": "^12.7.0",
+    "firebase-functions": "^6.1.0",
+    "tweetnacl": "^1.0.3"
+  }
+}
