@@ -114,10 +114,11 @@ class PushService {
 @pragma('vm:entry-point')
 Future<void> pushBackgroundHandler(RemoteMessage message) async {
   final d = message.data;
-  if (d['t'] != 'notify' || d['from'] == null) return;
+  final sender = d['sender'] ?? d['from'];
+  if (d['t'] != 'notify' || sender == null) return;
   WidgetsFlutterBinding.ensureInitialized();
   await Notifications.init();
-  final from = d['from'] as String;
+  final from = sender as String;
   final name = await _contactName(from);
   if (d['kind'] == 'call') {
     await Notifications.showIncomingCall(

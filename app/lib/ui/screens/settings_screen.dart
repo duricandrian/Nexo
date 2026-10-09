@@ -112,7 +112,6 @@ class SettingsScreen extends StatelessWidget {
           subtitle: Text(l.backupIdHint),
           onTap: () => _backup(context, m),
         ),
-        ListTile(leading: const Icon(Icons.dns_outlined), title: Text(l.serverAddress), subtitle: Text(m.serverUrl)),
         _section(context, l.about),
         FutureBuilder<PackageInfo>(
           future: PackageInfo.fromPlatform(),

@@ -149,13 +149,14 @@ exports.notify = onDocumentCreated('queues/{to}/msgs/{mid}', async (event) => {
   if (!tokens.length) return;
   const res = await admin.messaging().sendEachForMulticast({
     tokens,
-    data: { t: 'notify', from: String(data.from), kind: String(data.kind) },
+    data: { t: 'notify', sender: String(data.from), kind: String(data.kind) },
     android: { priority: 'high', ttl: data.kind === 'call' ? 60000 : 4 * 7 * 24 * 3600 * 1000 },
   });
   const dead = [];
   res.responses.forEach((r, i) => {
     const code = r.error && r.error.code;
-    if (code === 'messaging/registration-token-not-registered' || code === 'messaging/invalid-argument') dead.push(tokens[i]);
+    if (code === 'messaging/registration-token-not-registered') dead.push(tokens[i]);
+    else if (code) console.warn('fcm', code);
   });
   if (dead.length) await priv.ref.update({ fcm: FieldValue.arrayRemove(...dead) });
 });
