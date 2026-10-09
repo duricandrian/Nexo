@@ -438,13 +438,13 @@ class Messenger extends ChangeNotifier {
   }
 
   /// Sends a call signaling payload to one peer (optionally scoped to a group).
-  Future<void> sendCallSignal(String peer, Map<String, dynamic> payload, {bool ephemeral = false}) async {
+  Future<void> sendCallSignal(String peer, Map<String, dynamic> payload) async {
     if (!contacts.containsKey(peer)) await _fetchContact(peer, hidden: true);
-    await _sendTo(peer, payload, kind: ephemeral ? 'eph' : (payload['type'] == 'call-offer' ? 'call' : 'msg'));
+    await _sendTo(peer, payload, kind: payload['type'] == 'call-offer' ? 'call' : 'eph');
   }
 
   Future<void> sendGroupCallSignal(String groupKey, Map<String, dynamic> payload) =>
-      _sendToChat(groupKey, payload, kind: payload['type'] == 'gcall-start' ? 'call' : 'msg');
+      _sendToChat(groupKey, payload, kind: payload['type'] == 'gcall-start' ? 'call' : 'eph');
 
   Future<void> _flushOutbox() async {
     final rows = await db.query('outbox', orderBy: 'created');
