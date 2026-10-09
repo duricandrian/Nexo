@@ -58,6 +58,7 @@ class _NexoAppState extends State<NexoApp> with WidgetsBindingObserver {
   }
 
   Future<void> _startSession(Identity identity) async {
+    final launchPayload = await Notifications.launchPayload();
     final m = await Messenger.create(identity);
     m.start();
     final calls = CallService(m);
@@ -73,10 +74,9 @@ class _NexoAppState extends State<NexoApp> with WidgetsBindingObserver {
         MaterialPageRoute(builder: (_) => const HomeScreen()),
         (_) => false,
       );
+      if (launchPayload != null) _onNotificationTap(launchPayload);
     });
     BackgroundService.start().catchError((_) {});
-    final payload = await Notifications.launchPayload();
-    if (payload != null) _onNotificationTap(payload);
   }
 
   void _onNotificationTap(String? payload) {

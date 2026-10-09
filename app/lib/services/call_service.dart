@@ -348,7 +348,7 @@ class CallService extends ChangeNotifier {
     }
     pc.onIceCandidate = (c) {
       if (c.candidate == null) return;
-      m.sendCallSignal(peerId, {'type': 'call-ice', 'call': callId, 'cand': c.toMap()}, ephemeral: false);
+      m.sendCallSignal(peerId, {'type': 'call-ice', 'call': callId, 'cand': c.toMap()});
     };
     pc.onTrack = (e) {
       if (e.streams.isEmpty) return;
